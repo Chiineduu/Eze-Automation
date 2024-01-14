@@ -1,5 +1,5 @@
 {
-  "name": "eze-automation",
+  "name": "eze-",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,8 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "cypress": "^13.6.1"
+  "devDependencies": {
+    "cypress": "^13.6.2",
+    "cypress-mailslurp": "^1.7.0"
   }
 }
