@@ -73,8 +73,6 @@ describe('Verify Eze Logo on Home Page', () => {
           cy.get(':nth-child(11) > a > img').should('be.visible').click()
           cy.get(':nth-child(12) > a > img').should('be.visible').click()
           cy.get(':nth-child(13) > a > img').should('be.visible').click()
-
-    
         })
       })
       
