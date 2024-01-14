@@ -5,7 +5,13 @@ describe('Account Creation', () => {
     return false
   });
    
-    it.only('To verify user is able to create account with Company Name.', () => {
+  const Chance = require('chance');
+  const chance = new Chance();
+  
+  // Rest of your Cypress test code
+  
+
+    it('To verify user is able to create account with Company Name.', () => {
      cy.visit('https://v2-dev.ezewholesale.com/');
      cy.get(':nth-child(6) > #panel1a-header',{ timeout: 10000 }).click().should('contain',"Africa");
      cy.get('.MuiPaper-root.Mui-expanded > .MuiCollapse-root > .MuiCollapse-wrapper > .MuiCollapse-wrapperInner > #panel1a-content > .MuiAccordionDetails-root > .innerTable__TableContainer-sc-10uczqs-0 > .innerTable__TableBody-sc-10uczqs-1 > :nth-child(4)', { timeout: 10000 }).click().should('contain',"Nigeria");
@@ -13,7 +19,7 @@ describe('Account Creation', () => {
      cy.get(':nth-child(1) > :nth-child(1) > [data-testid="inputs"]').type('chinedu')
      cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(1) > .dpZqKl > [data-testid="inputs"]').type('Ernest');
      cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(1) > :nth-child(2) > label').should('contain',"Last Name");
-     cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(2) > [data-testid="inputs"]').type('chinedu+III0Vbhu@ezewholesale.com');
+     cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(2) > [data-testid="inputs"]').type(chance.email({domain: "ezewholesale.com"}))
      cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(2) > label').should('contain',"Email Address");
      cy.get('.biz > [data-testid="input"] > [data-testid="inputs"]').type('MVP Gadgets');
      cy.get('.biz > [data-testid="input"] > label').should('contain',"Company Name");
@@ -29,6 +35,7 @@ describe('Account Creation', () => {
      cy.get('.infoOption > select').select('Media', { force: true });
      cy.get('.infoOption > label',{ timeout: 10000 }).should('exist').and('be.visible');
      cy.get('.register-form__Wrap-sc-1fcgwnl-0 > [data-testid="button"]',{ timeout: 10000 }).click().should('exist').and('be.visible');
+     cy.wait(5000);
      cy.get('.emailConfirmation__FormWrapper-sc-sj611p-1').click().should('exist').and('be.visible');
     });
 
@@ -40,7 +47,7 @@ describe('Account Creation', () => {
       cy.get(':nth-child(1) > :nth-child(1) > [data-testid="inputs"]').type('chinedu')
       cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(1) > .dpZqKl > [data-testid="inputs"]').type('Ernest');
       cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(1) > :nth-child(2) > label').should('contain',"Last Name");
-      cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(2) > [data-testid="inputs"]').type('michealpinto1+00nIkp@gmail.com');
+      cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(2) > [data-testid="inputs"]').type(chance.email({domain: "gmail.com"}))
       cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(2) > label').should('contain',"Email Address");
       cy.get('.biz > [data-testid="input"] > [data-testid="inputs"]').type('MVP Gadgets');
       cy.get('.biz > [data-testid="input"] > label').should('contain',"Company Name");
@@ -56,6 +63,7 @@ describe('Account Creation', () => {
       cy.get('.infoOption > select').select('Media', { force: true });
       cy.get('.infoOption > label').should('exist',{ timeout: 10000 }).and('be.visible');
       cy.get('.register-form__Wrap-sc-1fcgwnl-0 > [data-testid="button"]',{ timeout: 10000 }).click().should('exist').and('be.visible');
+      cy.wait(5000);
       cy.get('.emailConfirmation__FormWrapper-sc-sj611p-1').click().should('exist').and('be.visible');
     });
     
@@ -67,7 +75,7 @@ describe('Account Creation', () => {
       cy.get(':nth-child(1) > :nth-child(1) > [data-testid="inputs"]').type('Chinedu')
       cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(1) > .dpZqKl > [data-testid="inputs"]').type('Ernest');
       cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(1) > :nth-child(2) > label').should('contain',"Last Name");
-      cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(2) > [data-testid="inputs"]').type('outlook_C412FB605A379F21+501lfum@outlook.com');
+      cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(2) > [data-testid="inputs"]').type(chance.email({domain: "outlook.com"}))
       cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(2) > label').should('contain',"Email Address");
       cy.get('.biz > [data-testid="input"] > [data-testid="inputs"]').type('MVP Gadgets');
       cy.get('.biz > [data-testid="input"] > label').should('contain',"Company Name");
@@ -83,6 +91,7 @@ describe('Account Creation', () => {
       cy.get('.infoOption > select').select('Media', { force: true });
       cy.get('.infoOption > label',{ timeout: 10000 }).should('exist').and('be.visible');
       cy.get('.register-form__Wrap-sc-1fcgwnl-0 > [data-testid="button"]',{ timeout: 10000 }).click();
+      cy.wait(5000);
       cy.get('.emailConfirmation__FormWrapper-sc-sj611p-1').click().should('exist').and('be.visible');
       
     });
@@ -95,7 +104,7 @@ describe('Account Creation', () => {
       cy.get(':nth-child(1) > :nth-child(1) > [data-testid="inputs"]').type('chinedu')
       cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(1) > .dpZqKl > [data-testid="inputs"]').type('Ernest');
       cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(1) > :nth-child(2) > label').should('contain',"Last Name");
-      cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(2) > [data-testid="inputs"]').type('chinedu.akosa+qgl@hotmail.com');
+      cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(2) > [data-testid="inputs"]').type(chance.email({domain: "hotmail.com"}))
       cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(2) > label').should('contain',"Email Address");
       cy.get('.biz > [data-testid="input"] > [data-testid="inputs"]').type('MVP Gadgets');
       cy.get('.biz > [data-testid="input"] > label').should('contain',"Company Name");
@@ -111,6 +120,7 @@ describe('Account Creation', () => {
       cy.get('.infoOption > select').select('Media', { force: true });
       cy.get('.infoOption > label').should('exist',{ timeout: 10000 }).and('be.visible');
       cy.get('.register-form__Wrap-sc-1fcgwnl-0 > [data-testid="button"]',{ timeout: 10000 }).click().should('exist').and('be.visible');
+      cy.wait(5000);
       cy.get('.emailConfirmation__FormWrapper-sc-sj611p-1').click().should('exist').and('be.visible');
     });
 
@@ -122,7 +132,7 @@ describe('Account Creation', () => {
       cy.get(':nth-child(1) > :nth-child(1) > [data-testid="inputs"]').type('chinedu')
       cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(1) > .dpZqKl > [data-testid="inputs"]').type('Ernest');
       cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(1) > :nth-child(2) > label').should('contain',"Last Name");
-      cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(2) > [data-testid="inputs"]').type('akosa.chinedu+gb@zohomail.com');
+      cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(2) > [data-testid="inputs"]').type(chance.email({domain: "zohomail.com"}))
       cy.get('.register-form__Wrap-sc-1fcgwnl-0 > :nth-child(2) > label').should('contain',"Email Address");
       cy.get('.biz > [data-testid="input"] > [data-testid="inputs"]').type('MVP Gadgets');
       cy.get('.biz > [data-testid="input"] > label').should('contain',"Company Name");
@@ -138,6 +148,7 @@ describe('Account Creation', () => {
       cy.get('.infoOption > select').select('Media', { force: true });
       cy.get('.infoOption > label').should('exist',{ timeout: 10000 }).and('be.visible');
       cy.get('.register-form__Wrap-sc-1fcgwnl-0 > [data-testid="button"]',{ timeout: 10000 }).click().should('exist').and('be.visible');
+      cy.wait(5000);
       cy.get('.emailConfirmation__FormWrapper-sc-sj611p-1').click().should('exist').and('be.visible');
     });
   
