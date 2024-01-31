@@ -11,7 +11,7 @@ describe('My Cypress Test', () => {
   cy.get('.BusinessType__Footer-sc-6t85ci-3 > .MuiButtonBase-root').should('be.visible').click(); 
   cy.get('.namegroup > :nth-child(1) > .styles__InputWrap-sc-1lppl70-0 > input').type(chance.name());
   cy.get('.namegroup > :nth-child(2) > .styles__InputWrap-sc-1lppl70-0 > input').type(chance.name());
-  cy.get(':nth-child(2) > :nth-child(1) > .styles__InputWrap-sc-1lppl70-0 > input').type("692b0e15-3563-4022-b55e-1f4660fe2267@mailslurp.mx");
+  cy.get(':nth-child(2) > :nth-child(1) > .styles__InputWrap-sc-1lppl70-0 > input').type(chance.email());
   cy.get(':nth-child(3) > :nth-child(1) > .styles__Dropdown-sc-w9x0sy-0 > .styles__Button-sc-w9x0sy-1').click();  
   cy.get('.optionsWrap > :nth-child(162)').should('contain', 'Nigeria').click();
   cy.get('[style="flex-direction: column;"] > :nth-child(1) > .styles__Dropdown-sc-w9x0sy-0 > .styles__Button-sc-w9x0sy-1').click();  
