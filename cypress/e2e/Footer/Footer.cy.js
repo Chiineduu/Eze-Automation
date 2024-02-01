@@ -18,7 +18,7 @@ describe('Login Popup', () => {
             const validEmail = 'jeriqigwe+18@gmail.com'    
             cy.get('.css-1t7498z').type(validEmail); 
             cy.get('.css-hf3nnx > .MuiButtonBase-root').click(); 
-            cy.get('.css-pmxhpn > .MuiTypography-root').should('be.visible');
+            cy.get('.css-pmxhpni88hi66i\ > .MuiTypography-root').should('be.visible');
             cy.contains('Thanks! You\'ve successfully subscribed.').should('be.visible'); 
         });
       });
